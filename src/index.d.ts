@@ -29,7 +29,7 @@ declare module 'geolocation-utils' {
   export function headingDistanceTo (from: Location, to: Location) : HeadingDistance
   export function headingTo(from: Location, to: Location) : number
   export function distanceTo(from: Location, to: Location) : number
-  export function getBoundingBox(locations: Location[], margin): BoundingBox
+  export function getBoundingBox(locations: Location[], margin: number): BoundingBox
   export function insideBoundingBox(location: Location, boundingBox: BoundingBox): boolean
   export function insideCircle(location: Location, center: Location, radius: number) : boolean
   export function insidePolygon(location: Location, polygon: Location[]) : boolean
