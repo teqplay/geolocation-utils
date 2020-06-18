@@ -1,5 +1,10 @@
 # geolocation-utils changelog
 
+## 2020-06-18, version 1.2.3
+
+- Fix TypeScript definition of `getBoundingBox`. Thanks @Addono.
+- Add TypeScript definition of `cpa`. Thanks @BlueSeca2.
+
 
 ## 2019-08-06, version 1.2.2
 
