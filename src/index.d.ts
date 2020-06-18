@@ -34,6 +34,7 @@ declare module 'geolocation-utils' {
   export function insideCircle(location: Location, center: Location, radius: number) : boolean
   export function insidePolygon(location: Location, polygon: Location[]) : boolean
   export function moveTo(from: Location, headingDistance: HeadingDistance): LatLon
+  export function cpa(track1: LocationHeadingSpeed, track2: LocationHeadingSpeed) : TimeDistance
 
   export function normalizeHeading(heading: number) : number
   export function normalizeLatitude(latiude: number) : number
