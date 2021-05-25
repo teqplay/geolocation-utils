@@ -1,5 +1,10 @@
 # geolocation-utils changelog
 
+## 2021-05-25, version 1.2.4
+
+- Fix TypeScript definition of `LonLatTuple`.
+
+
 ## 2020-06-18, version 1.2.3
 
 - Fix TypeScript definition of `getBoundingBox`. Thanks @Addono.
