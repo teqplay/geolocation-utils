@@ -1,5 +1,9 @@
 # geolocation-utils changelog
 
+## 2021-05-25, version 1.2.5
+
+- Fix TypeScript definition file published at the wrong place.
+
 ## 2021-05-25, version 1.2.4
 
 - Fix TypeScript definition of `LonLatTuple`.

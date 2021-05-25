@@ -1,11 +1,11 @@
 {
   "name": "geolocation-utils",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "A utility library for calculations with geolocations",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "copy-d-ts": "copyup src/*.d.ts lib",
+    "copy-d-ts": "copyfiles --up 1 src/*.d.ts lib",
     "build": "babel src -d lib && npm run copy-d-ts",
     "prepublishOnly": "npm run build && npm test",
     "test": "ava --verbose"
