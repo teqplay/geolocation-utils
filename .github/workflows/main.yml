@@ -1,0 +1,28 @@
+name: Geolocation-utils workflow
+description: Customized workflow which only performs unit-tests
+run-name: ${{ github.event.head_commit.message }}
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+env:
+  IMAGE_VERSION: ${{ github.run_id }}.${{ github.run_number }}.${{ github.run_attempt }}
+
+jobs:
+  unit-tests:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [latest, lts/*, 20, 18]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup NodeJS ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - run: npm ci
+      - run: npm run test
