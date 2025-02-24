@@ -1,0 +1,21 @@
+name: Geolocation-utils workflow
+description: Customized workflow which only performs unit-tests
+run-name: ${{ github.event.head_commit.message }}
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+env:
+  IMAGE_VERSION: ${{ github.run_id }}.${{ github.run_number }}.${{ github.run_attempt }}
+
+jobs:
+  unit-tests:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run unit tests
+        uses: teqplay/actions/frontend/run-unit-tests@master
+        with:
+          node_version: 22.12.0
+          npm_token: ${{ secrets.npm_token }}
