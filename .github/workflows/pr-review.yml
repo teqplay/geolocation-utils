@@ -1,0 +1,14 @@
+﻿name: pr-review
+run-name : ${{ github.event.head_commit.message }}
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  review:
+    name: pr-review workflow
+    uses: teqplay/actions/.github/workflows/augment-pr-review.yml@master
+    with:
+      guidelines_preset: "frontend"
+    secrets:
+      AUGMENT_SESSION_AUTH: ${{ secrets.augment_session_auth }}
